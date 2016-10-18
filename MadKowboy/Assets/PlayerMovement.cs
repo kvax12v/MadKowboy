@@ -25,8 +25,8 @@ public class PlayerMovement : MonoBehaviour {
 
 
 	
-		RaycastHit2D land = Physics2D.Raycast (childPos.position, -Vector2.up, .001f);
-		Debug.DrawRay (childPos.position, -Vector2.up);
+		RaycastHit2D land = Physics2D.Raycast (childPos.position, Vector2.down, .001f);
+		Debug.DrawRay (childPos.position, Vector2.down);
 
 		Debug.Log (land.collider);
 
