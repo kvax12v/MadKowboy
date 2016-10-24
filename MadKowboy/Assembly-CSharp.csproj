@@ -45,7 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Dialogue.cs" />
+     <Compile Include="Assets\DialogueMngr.cs" />
      <Compile Include="Assets\PlayerMovement.cs" />
+     <Compile Include="Assets\ProjectileController.cs" />
+     <Compile Include="Assets\ShootingController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

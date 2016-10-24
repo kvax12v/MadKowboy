@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float maxSpeed = 10f;
 	public float jump = 5f;
-	bool facingRight = true;
+	public bool facingRight = true;
 	Rigidbody2D rigid;
 	public bool grounded;
 	public Transform childPos;
