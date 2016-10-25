@@ -17,10 +17,25 @@ public class PlayerMovement : MonoBehaviour {
 		rigid = GetComponent<Rigidbody2D> ();
 	}
 
+
+	void Update(){
+
+
+	}
+
+
 	// Update is called once per frame
 	void FixedUpdate () {
 
+		if (rigid.velocity.x > 0) {
+			animation.SetInteger ("State", 1);
 
+		} else if (rigid.velocity.x == 0) {
+			animation.SetInteger ("State", 0);
+		} else if (rigid.velocity.x < 0) {
+			animation.SetInteger ("State", 1);
+
+		}
 
 		childPos = this.gameObject.transform.GetChild (0);
 
@@ -58,10 +73,6 @@ public class PlayerMovement : MonoBehaviour {
 
 
 
-		if(rigid.velocity.x > 0){
-			animation.SetInteger ("State", 1);
-			
-		}
 
 
 	
