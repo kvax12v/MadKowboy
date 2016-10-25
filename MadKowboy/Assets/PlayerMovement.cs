@@ -10,14 +10,18 @@ public class PlayerMovement : MonoBehaviour {
 	public bool grounded;
 	public Transform childPos;
 	public LayerMask groundLayer;
+	Animator animation;
 	// Use this for initialization
 	void Start () {
-
+		animation = GetComponent<Animator> ();
 		rigid = GetComponent<Rigidbody2D> ();
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
+
+
+
 		childPos = this.gameObject.transform.GetChild (0);
 
 		float move = Input.GetAxis ("Horizontal");
@@ -50,6 +54,13 @@ public class PlayerMovement : MonoBehaviour {
 		//else if the player is pressing left and facining right is true, then we flip it so facingright is false and the scale's x is reversed
 		}else if(move <0 && facingRight){
 			Flip();
+		}
+
+
+
+		if(rigid.velocity.x > 0){
+			animation.SetInteger ("State", 1);
+			
 		}
 
 
