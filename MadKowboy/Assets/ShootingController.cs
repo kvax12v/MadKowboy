@@ -15,11 +15,14 @@ public class ShootingController : MonoBehaviour {
 	public float fireDelay = 0.25f;
 	float cooldownTimer = 0;
 	GameObject KrazyKowboy;
+	Animator animation;
 
 	// Use this for initialization
 	void Start () {
+
 		KrazyKowboy = GameObject.Find("KrazyKowboy");
 		playerMovement = KrazyKowboy.GetComponent<PlayerMovement> ();
+		animation = KrazyKowboy.GetComponent<Animator> ();
 
 	}
 	
@@ -28,6 +31,8 @@ public class ShootingController : MonoBehaviour {
 		cooldownTimer -= Time.deltaTime;
 
 		if (Input.GetButton ("Fire1") && cooldownTimer <= 0) {
+			animation.SetInteger ("State", 3);
+
 			GameObject ballInstance;
 			ballInstance = Instantiate (boomGun, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
 			rigid = ballInstance.GetComponent<Rigidbody2D> ();
@@ -41,7 +46,6 @@ public class ShootingController : MonoBehaviour {
 			rigid.velocity = transform.forward * maxSpeed;
 			Debug.Log ("Boom gun goes off!");
 			cooldownTimer = fireDelay;
-
 		}
 	
 	}
