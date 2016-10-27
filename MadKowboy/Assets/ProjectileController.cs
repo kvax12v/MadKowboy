@@ -25,4 +25,8 @@ public class ProjectileController : MonoBehaviour {
 
 
 	}
+
+	void OnBecameInvisible() {
+		Destroy (gameObject);
+	}
 }
